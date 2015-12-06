@@ -1,0 +1,4 @@
+So, The battle engine is being.... harder than I expected.
+I may need to write a new engine instead of using the old one.
+Certain peices just don't fit in... I also need to work on the town and shops.
+-November 18th, 2015.

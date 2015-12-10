@@ -2,7 +2,7 @@ author="jajaio"
 import json
 import classes as cl
 #Work in progress. May not make it into final release.
-def save():
+def save_game():
 	with open('player.json', 'w') as pfile:
 		pfile.write(json.dumps({
             "hp":cl.Player.hp,
@@ -13,4 +13,4 @@ def save():
             }))
         
 if __name__=='__main__':
-    save()
+    save_game()

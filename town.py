@@ -1,5 +1,11 @@
 import classes as cl
+import save
 author='jajaio'
+
+'''TODO
+Add in save option
+Continue working on the shop
+'''
 def hub():
 	print("Welcome to the Pines!")
 
@@ -8,7 +14,7 @@ def shop():
     while True:
         question=input("Welcome to the Shop! Would you like to see the basic classes or the advanced classes, or leave? (1),(2),(3)").strip()
         if question=="1":
-            question_one=input("Okay, would you like to see the the Rouge, Mage, or Sellsword? (1),(2),(3)").strip()
+            question_one=input("Okay, would you like to see the the Rouge, Cleric, or Sellsword? (1),(2),(3)").strip()
             if question_one=="1":
                 cl.show_rouge()
                 buyr=input("Would you like to purchase the Rouge class for 100 Gold? (y/n)").strip().lower()
@@ -23,7 +29,7 @@ def shop():
                     print("Oh okay.") 
                     continue
             elif question_one=="2":
-                cl.show_mage()
+                cl.show_cleric()
             elif question_one=="3":
                 cl.show_sellsword()
         elif question=="2":

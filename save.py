@@ -1,7 +1,9 @@
 author="jajaio"
 import json
 import classes as cl
-#Work in progress. May not make it into final release.
+
+#The player can save their game in the town.
+
 def save_game():
 	with open('player.json', 'w') as pfile:
 		pfile.write(json.dumps({

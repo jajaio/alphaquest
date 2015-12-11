@@ -1,5 +1,9 @@
 author="jajaio"
-#Building Blocks, one could say.
+'''TODO
+Make advanced player classes
+More monsters?
+'''
+
 class Thing():
 	hp=None #Health
 	agi=None #Agility
@@ -10,7 +14,7 @@ class Player(Thing):
 	gold=None
 class Foe(Thing):
 	pass
-#Basic Player Classes, the player will get to choose at the beggining of the game what class they want.
+#Basic Player Classes, the player will get to choose at the start of the game what class they want.
 class Rouge(Player):
 	hp=50
 	agi=70
@@ -22,7 +26,7 @@ class Sellsword(Player):
 	agi=45
 	deff=5
 	att=30
-class Mage(Player):
+class Cleric(Player):
 	hp=40
 	agi=65
 	deff=3
@@ -61,16 +65,16 @@ class Goblin(Foe):
 	hp=75
 	agi=20
 	att=15
-def show_mage():
+def show_cleric():
 	tebt='''
-	Mage Stats:
-	Health: {m.hp}
-	Agility: {m.agi}
-	Attack: {m.att}
-	Defence: {m.deff}	
-	Magic: {m.mp}
+	Cleric Stats:
+	Health: {c.hp}
+	Agility: {c.agi}
+	Attack: {c.att}
+	Defence: {c.deff}	
+	Magic: {c.mp}
 	'''
-	print(tebt.format(m=Mage()))
+	print(tebt.format(c=Cleric()))
 def show_rouge():
 	text='''
 	Rouge Stats:
@@ -97,4 +101,4 @@ if __name__=='__main__':
 # Since this is a module, it won't run on its own. this if statement will run if I run this file, but not when it is imported.
 	show_rouge()
 	show_sellsword()
-	show_mage()
+	show_cleric()

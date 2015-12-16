@@ -39,6 +39,7 @@ class Lost(Player):
 	deff=1
 	att=20
 	mp=1
+Player=Lost
 #Basic Monster Classes.
 class Slime(Foe):
 	hp=20
@@ -97,8 +98,20 @@ def show_sellsword():
 	'''
 	print(tezt.format(s=Sellsword()))
 
+def show_player():
+    yext='''
+    Player Stats:
+    Health: {p.hp}
+    Agility: {p.agi}
+    Attack: {p.agi}
+    Defence: {p.deff}
+    Magic: {p.mp}
+    '''
+    print(yext.format(p=Player()))
+
 if __name__=='__main__':
-# Since this is a module, it won't run on its own. this if statement will run if I run this file, but not when it is imported.
-	show_rouge()
-	show_sellsword()
-	show_cleric()
+    show_rouge()
+    show_sellsword()
+    show_cleric()
+    show_player()
+

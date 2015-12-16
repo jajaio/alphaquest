@@ -8,4 +8,7 @@ def load_game():
         cl.Player.deff=j['deff']
         cl.Player.att=j['att']
         cl.Player.mp=j['mp']
-        
+
+if __name__=='__main__':
+    load_game()
+    cl.show_player()

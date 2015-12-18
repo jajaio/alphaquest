@@ -10,12 +10,15 @@ class Thing():
 	deff=None #Defence
 	att=None #Attack
 	mp=None #Magic Power (Ammount of times you can heal)
+
 class Player(Thing):
-	gold=None
+    gold=None
+    name="Test Name"
+
 class Foe(Thing):
 	pass
 #Basic Player Classes, the player will get to choose at the start of the game what class they want.
-class Rouge(Player):
+class Rogue(Player):
 	hp=50
 	agi=70
 	deff=3
@@ -45,6 +48,7 @@ class Slime(Foe):
 	hp=20
 	agi=15
 	att=10
+Foe=Slime
 class Bandit(Foe):
 	hp=60
 	agi=40
@@ -76,16 +80,16 @@ def show_cleric():
 	Magic: {c.mp}
 	'''
 	print(tebt.format(c=Cleric()))
-def show_rouge():
+def show_rogue():
 	text='''
-	Rouge Stats:
+	Rogue Stats:
 	Health: {r.hp}
 	Agility: {r.agi}
 	Attack: {r.att}
 	Defence: {r.deff}
 	Magic: {r.mp}
 	'''
-	print(text.format(r=Rouge()))
+	print(text.format(r=Rogue()))
 
 def show_sellsword():
 	tezt='''
@@ -110,7 +114,7 @@ def show_player():
     print(yext.format(p=Player()))
 
 if __name__=='__main__':
-    show_rouge()
+    show_rogue()
     show_sellsword()
     show_cleric()
     show_player()

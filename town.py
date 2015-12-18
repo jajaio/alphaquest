@@ -14,14 +14,14 @@ def shop():
     while True:
         question=input("Welcome to the Shop! Would you like to see the basic classes or the advanced classes, or leave? (1),(2),(3)").strip()
         if question=="1":
-            question_one=input("Okay, would you like to see the the Rouge, Cleric, or Sellsword? (1),(2),(3)").strip()
+            question_one=input("Okay, would you like to see the the Rogue, Cleric, or Sellsword? (1),(2),(3)").strip()
             if question_one=="1":
-                cl.show_rouge()
-                buyr=input("Would you like to purchase the Rouge class for 100 Gold? (y/n)").strip().lower()
+                cl.show_rogue()
+                buyr=input("Would you like to purchase the Rogue class for 100 Gold? (y/n)").strip().lower()
                 if buyr=="y":
                     if int(cl.Player.gold) >= 100:
-                        cl.Player=cl.Rouge
-                        print("You are now the Rouge Class!")
+                        cl.Player=cl.Rogue
+                        print("You are now the Rogue Class!")
                         print(cl.Player.hp)
                     if int(cl.Player.gold) < 100:
                         print("You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")

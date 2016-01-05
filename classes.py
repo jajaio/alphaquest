@@ -29,6 +29,7 @@ class Sellsword(Player):
 	agi=45
 	deff=5
 	att=30
+	mp=0
 class Cleric(Player):
 	hp=40
 	agi=65
@@ -48,6 +49,8 @@ class Slime(Foe):
 	hp=20
 	agi=15
 	att=10
+	deff=0
+	mp=0
 Foe=Slime
 class Bandit(Foe):
 	hp=60
@@ -60,6 +63,7 @@ class Zombie(Foe):
 	agi=10
 	att=15
 	deff=1
+	mp=0
 class Skeleton(Foe):
 	hp=40
 	agi=50
@@ -70,6 +74,8 @@ class Goblin(Foe):
 	hp=75
 	agi=20
 	att=15
+	mp=0
+	deff=1
 def show_cleric():
 	tebt='''
 	Cleric Stats:

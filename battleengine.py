@@ -23,15 +23,15 @@ def foeattack():
 	print("Your foe strikes you!")
 	cl.Player.hp -= 10
 def foeheal():
-    if cl.Foe.heals<1:
+    if cl.Foe.mp<1:
         print("Your foe tried to heal, but attacked instead!")
         cl.Player.hp -= 10
         t.sleep(4)
     else:
-		print("Your foe Heals")
-		t.sleep(3)
+        print("Your foe Heals")
+        t.sleep(3)
         cl.Foe.hp=cl.Foe.hp+35
-		cl.Foe.heals=cl.Foe.heals-1
+        cl.Foe.mp=cl.Foe.mp-1
 
 def ai():
 	listy=[foeheal,foeattack]
@@ -54,17 +54,19 @@ def fight():
         else:
             print(c.clear)
             print(cl.Player.name+str(" HP = ")+str(cl.Player.hp)+str(": ")+cl.Player.name+str(" HEALS = ")+str(cl.Player.mp))
-            print("FOE HP = "+str(cl.Foe.hp)+str(": ")" FOE HEALS = "+str(cl.Foe.mp))
+            print("FOE HP = "+str(cl.Foe.hp)+str(": ")+str(" FOE HEALS = ")+str(cl.Foe.mp))
             q=input("Attack(1) or Heal(2)? >>>").strip().lower()
             if q=="1":
                 print("You attack your foe!")
                 cl.Foe.hp=cl.Foe.hp-10
             elif q=="2" and cl.Player.mp<1:
                 print("You are out of heals, you attack instead.")
+                t.sleep(1)
                 cl.Foe.hp=cl.Foe.hp-10
             elif q=="2":
                 print("You decide to stay back and heal.")
-                cl.Player.hp=cl.Player.hp+3
+                cl.Player.hp+=10
+                cl.Player.mp-=1
     ai()
 if __name__=='__main__':
     fight()

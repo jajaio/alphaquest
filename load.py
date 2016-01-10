@@ -1,5 +1,6 @@
 import classes as cl
 import json
+author="jajaio"
 def load_game():
     with open('player.json', 'r') as pfile:
         j=json.load(pfile)

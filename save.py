@@ -1,7 +1,7 @@
 author="jajaio"
 import json
 import classes as cl
-
+author="jajaio"
 #The player can save their game in the town.
 
 def save_game():

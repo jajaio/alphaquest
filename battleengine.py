@@ -20,8 +20,8 @@ Fix indents
 '''
 
 def foeattack():
-	print("Your foe strikes you!")
-	cl.Player.hp -= 10
+    print("Your foe strikes you!")
+    cl.Player.hp -= 10
 def foeheal():
     if cl.Foe.mp<1:
         print("Your foe tried to heal, but attacked instead!")
@@ -53,9 +53,9 @@ def fight():
             break
         else:
             print(c.clear)
-            print(cl.Player.name+str(" HP = ")+str(cl.Player.hp)+str(": ")+cl.Player.name+str(" HEALS = ")+str(cl.Player.mp))
-            print("FOE HP = "+str(cl.Foe.hp)+str(": ")+str(" FOE HEALS = ")+str(cl.Foe.mp))
-            q=input("Attack(1) or Heal(2)? >>>").strip().lower()
+            print(c.blue+cl.Player.name+str(" HP = ")+str(cl.Player.hp)+str(": ")+cl.Player.name+str(" HEALS = ")+str(cl.Player.mp))
+            print(c.red+"FOE HP = "+str(cl.Foe.hp)+str(": ")+str(" FOE HEALS = ")+str(cl.Foe.mp))
+            q=input(c.reset+"Attack(1) or Heal(2)? >>>").strip().lower()
             if q=="1":
                 print("You attack your foe!")
                 cl.Foe.hp=cl.Foe.hp-10

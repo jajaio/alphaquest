@@ -1,3 +1,4 @@
+import colors as c
 author="jajaio"
 '''TODO
 Make advanced player classes
@@ -12,7 +13,7 @@ class Thing():
 	mp=None #Magic Power (Ammount of times you can heal)
 
 class Player(Thing):
-    gold=None
+    gold=0
     name="Test Name"
 
 class Foe(Thing):
@@ -41,7 +42,7 @@ class Lost(Player):
 	hp=30
 	agi=30
 	deff=1
-	att=20
+	att=10
 	mp=1
 Player=Lost
 #Basic Monster Classes.
@@ -110,7 +111,7 @@ def show_sellsword():
 
 def show_player():
     yext='''
-    Player Stats:
+    {p.name} Stats:
     Health: {p.hp}
     Agility: {p.agi}
     Attack: {p.agi}

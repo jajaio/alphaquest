@@ -1,4 +1,3 @@
-author="jajaio"
 import json
 import classes as cl
 author="jajaio"
@@ -11,7 +10,9 @@ def save_game():
             "agi":cl.Player.agi,
             "deff":cl.Player.deff,
             "att":cl.Player.att,
-            "mp":cl.Player.mp
+            "mp":cl.Player.mp,
+            "gold":cl.Player.gold,
+            "name":cl.Player.name
             }))
         
 if __name__=='__main__':

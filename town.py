@@ -1,28 +1,41 @@
 import classes as cl
 import save
+import time as t
+import colors as c
 author='jajaio'
 
 '''TODO
 Add in save option
 Continue working on the shop
 '''
-def hub():
-	print("Welcome to the Pines!")
 
+def hub():
+    print(c.clear)
+    print(c.yellow+"Welcome to the Pines!")
+    hubquestion=input("Would you like to go to the field, shop, or the inn? (1), (2), (3)"+c.reset+" >>>"+c.violet)
+    if hubquestion=="1":
+        pass
+    elif hubquestion=="2":
+        print(c.yellow+"You decide to go to the shop.")
+        t.sleep(1.3)
+        shop()
+    elif hubquestion=="3":
+        pass
 
 def shop():
+    print(c.clear)
     while True:
-        question=input("Welcome to the Shop! Would you like to see the basic classes or the advanced classes, or leave? (1),(2),(3)").strip()
+        question=input("Welcome to the shop! Would you like to see the basic classes or the advanced classes, or leave? (1),(2),(3)").strip()
         if question=="1":
             question_one=input("Okay, would you like to see the the Rogue, Cleric, or Sellsword? (1),(2),(3)").strip()
             if question_one=="1":
                 cl.show_rogue()
-                buyr=input("Would you like to purchase the Rogue class for 100 Gold? (y/n)").strip().lower()
+                buyr=input("Would you like to purchase the Rogue class for 100 Gold? (Y/N)").strip().lower()
                 if buyr=="y":
                     if int(cl.Player.gold) >= 100:
                         cl.Player=cl.Rogue
                         print("You are now the Rogue Class!")
-                        print(cl.Player.hp)
+                        print(cl.show_player))
                     if int(cl.Player.gold) < 100:
                         print("You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
                 elif buyr=="n":
@@ -42,4 +55,4 @@ def shop():
             shop()
 
 if __name__=='__main__':
-	shop()
+    hub()

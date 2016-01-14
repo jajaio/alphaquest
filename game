@@ -20,7 +20,7 @@ logo='''
 (  ___  )|\     /|(  ____ \(  ____ \\__   __/
 | (   ) || )   ( || (    \/| (    \/   ) (   
 | |   | || |   | || (__    | (_____    | |   
-| |   | || |   | ||  __)   (_____  )   | |   
+| |   | || |   | ||  __)   (_____  )   | |  
 | | /\| || |   | || (            ) |   | |   
 | (_\ \ || (___) || (____/\/\____) |   | |   
 (____\/_)(_______)(_______/\_______)   )_(   
@@ -58,18 +58,37 @@ def neworload():
         print(c.yellow+"I don't understand... type 1 for a save file, and 2 for loading a game.")
         neworload()
 
+def intro():
+    print(c.clear)
+    print("You awake.")
+    t.sleep(1)
+    print("You look around.")
+    t.sleep(1)
+    print("You are lying down on your back in the woods.")
+    t.sleep(2)
+    print("This is not your cozy bed you fell asleep in last night.")
+    t.sleep(2)
+    print("You're lost.")
+    t.sleep(1)
+    print("You lift yourself off the ground.")
+    t.sleep(2)
+    print("As you look in the distance, you see a small town.")
+    t.sleep(2)
+    input("Looking for answers, you head to the town. [Press enter]")
+    town.hub()
+
 def nameask():
     name_question=input(c.yellow+"What is your name? "+c.reset+ ">>>"+c.violet).strip().title()
-    if name_question=="Jaja"or"Jajaio":
-        print("*insert funny easter egg here*")
+    confirm=input(c.yellow+"Oh, so your name is "+c.blue+name_question+c.yellow+"?"+c.reset+"(Y/N) >>>"+c.violet).strip().lower()
+    if confirm=="y":
+        cl.Player.name=name_question
+        input(c.yellow+"Okay "+c.blue+cl.Player.name+c.yellow+", your adventure is about to start. Press enter to start!")
+        intro()
+    elif confirm=="n":
+        nameask()
     else:
-        confirm=input(c.yellow+"Oh, so your name is "+c.blue+name_question+c.yellow+"?"+c.reset+"(Y/N) >>>"+c.violet).strip().lower()
-        if confirm=="y":
-            cl.Player.name=name_question
-            input(c.yellow+"Okay "+c.blue+cl.Player.name+c.yellow+", your adventure is about to start. Press enter to start!")
-            print("to be continued")
-        elif confirm=="n":
-            nameask()
+        print("I don't understand... type Y for yes and N for no.")
+        nameask()
 
 if __name__=='__main__':
     run()

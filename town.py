@@ -35,7 +35,7 @@ def shop():
                     if int(cl.Player.gold) >= 100:
                         cl.Player=cl.Rogue
                         print("You are now the Rogue Class!")
-                        print(cl.show_player))
+                        print(cl.show_player)
                     if int(cl.Player.gold) < 100:
                         print("You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
                 elif buyr=="n":

@@ -86,4 +86,6 @@ def fight():
                 ai()
                 pmove()
 if __name__=='__main__':
+    cl.Player=cl.Lost
+    cl.Foe=cl.Slime
     fight()

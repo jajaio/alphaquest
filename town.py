@@ -15,7 +15,8 @@ def hub():
     print(c.yellow+"Welcome to the Pines!")
     hubquestion=input("Would you like to go to the field, shop, or the inn? (1), (2), (3)"+c.reset+" >>>"+c.violet)
     if hubquestion=="1":
-        pass
+        print(c.yellow+"You decide to go to the field.")
+        f.field()
     elif hubquestion=="2":
         print(c.yellow+"You decide to go to the shop.")
         t.sleep(1.3)

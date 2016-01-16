@@ -11,24 +11,26 @@ def random_monster():
     cl.Foe=monster
 
 def field():
-    print("You are in a grassy field.")
-    f=input("Do you want to look for monsters? Or go back to the town? (1), (2)")
+    print(c.clear)
+    print(c.yellow+"You are in a grassy field.")
+    t.sleep(1)
+    f=input(c.yellow+"Do you want to look for monsters? Or go back to the town? (1), (2)"+c.reset+" >>>"+c.violet)
     if f=="1":
-        print("You decide to look around.")
+        print(c.yellow+"You decide to look around.")
         t.sleep(1.5)
         print(c.clear)
+        print(c.reset)
         print(".")
         t.sleep(.5)
         print(c.clear)
         print("..")
         t.sleep(.5)
         print(c.clear)
-        t.sleep(.5)
         print("...")
         t.sleep(.5)
         print(c.clear)
         random_monster()
-        print("You found a random "+cl.Foe.mname+"!")
+        print(c.yellow+"You found a random "+c.red+cl.Foe.mname+c.yellow+"!")
         t.sleep(1)
         b.fight()
         field()
@@ -38,4 +40,5 @@ def field():
         pass
 
 if __name__=='__main__':
+    cl.Player=cl.Lost
     field()

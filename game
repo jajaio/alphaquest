@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import time as t
-import battleengine as b
 import colors as c
 import classes as cl
 import town
@@ -40,6 +39,7 @@ def neworload():
     if qws=="1":
         qwa=input(c.yellow+"Are you sure? Any old save file will be deleted."+c.reset+" (Y/N)"+c.violet).strip().lower()
         if qwa=="y":
+            cl.Player=cl.Lost
             nameask()
         elif qwa=="n":
             neworload()

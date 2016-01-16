@@ -3,6 +3,7 @@ import battleengine as b
 import random
 import classes as cl
 import colors as c
+import time as t
 
 def random_monster():
     monsters=[cl.Slime, cl.Bandit, cl.Zombie, cl.Skeleton, cl.Goblin]
@@ -17,10 +18,14 @@ def field():
         t.sleep(1.5)
         print(c.clear)
         print(".")
+        t.sleep(.5)
         print(c.clear)
         print("..")
+        t.sleep(.5)
         print(c.clear)
+        t.sleep(.5)
         print("...")
+        t.sleep(.5)
         print(c.clear)
         random_monster()
         print("You found a random "+cl.Foe.mname+"!")
@@ -33,5 +38,4 @@ def field():
         pass
 
 if __name__=='__main__':
-    random_monster()
-    print(cl.Foe.mname)
+    field()

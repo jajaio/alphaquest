@@ -40,7 +40,7 @@ class Cleric(Player):
 #Lost is the default class, gotta make the player something!
 class Lost(Player):
     hp=30
-    agi=30
+    agi=20
     deff=1
     att=10
     mp=1

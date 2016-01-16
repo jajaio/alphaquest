@@ -77,7 +77,7 @@ def fight():
         else:
             print(c.clear)
             print(c.blue+cl.Player.name+str(" HP = ")+str(cl.Player.hp)+str(": ")+cl.Player.name+str(" MP = ")+str(cl.Player.mp))
-            print(c.red+"FOE HP = "+str(cl.Foe.hp)+str(": ")+str(" FOE MP = ")+str(cl.Foe.mp))
+            print(c.red+cl.Foe.mname+str(" HP = "+str(cl.Foe.hp)+str(": ")+cl.Foe.mname+str(" MP = ")+str(cl.Foe.mp)))
             q=input(c.reset+"Attack(1) or Heal(2)? >>>"+c.violet).strip().lower()
             if cl.Player.agi >= cl.Foe.agi:
                 pmove()

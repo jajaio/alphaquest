@@ -4,7 +4,7 @@ import random
 import classes as cl
 import colors as c
 import time as t
-import town
+
 def random_monster():
     monsters=[cl.Slime, cl.Bandit, cl.Zombie, cl.Skeleton, cl.Goblin]
     monster=random.choice(monsters)
@@ -18,8 +18,8 @@ def field():
     if f=="1":
         print(c.yellow+"You decide to look around.")
         t.sleep(1.5)
-        print(c.reset)
         print(c.clear)
+        print(c.reset)
         print(".")
         t.sleep(.5)
         print(c.clear)
@@ -35,10 +35,9 @@ def field():
         b.fight()
         field()
     elif f=="2":
-        town.hub()
+        pass
     else:
-        print("I don't know what you mean....")
-
+        pass
 
 if __name__=='__main__':
     cl.Player=cl.Lost

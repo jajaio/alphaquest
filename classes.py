@@ -39,9 +39,9 @@ class Cleric(Player):
     mp=4
 #Lost is the default class, gotta make the player something!
 class Lost(Player):
-    hp=30
+    hp=55
     agi=20
-    deff=1
+    deff=2
     att=10
     mp=1
 

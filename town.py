@@ -9,7 +9,18 @@ author='jajaio'
 Add in save option
 Continue working on the shop
 '''
-
+def inn():
+    innq=input("Welcome to the inn. Would you like to rest here? Or leave? (1), (2)")
+    if innq=="1":
+        print("You shut your eyes and rest for a bit.")
+        t.sleep(.5)
+        print("(SAVING GAME...")
+        save.save_game()
+        print("ogre")
+    elif innq=="2":
+        pass
+    else:
+        pass
 def hub():
     print(c.clear)
     print(c.yellow+"Welcome to the Pines!")
@@ -22,7 +33,7 @@ def hub():
         t.sleep(1.3)
         shop()
     elif hubquestion=="3":
-        pass
+        inn()
 
 def shop():
     print(c.clear)
@@ -42,9 +53,10 @@ def shop():
                         print("You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
                 elif buyr=="n":
                     print("Oh okay.") 
-                    continue
+                    shop()
             elif question_one=="2":
                 cl.show_cleric()
+
             elif question_one=="3":
                 cl.show_sellsword()
         elif question=="2":

@@ -122,6 +122,7 @@ def show_player():
     Attack: {p.agi}
     Defence: {p.deff}
     Magic: {p.mp}
+    Gold: {p.gold}
     '''
     print(yext.format(p=Player()))
 

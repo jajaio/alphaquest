@@ -35,4 +35,10 @@ my schedule has me working for only 100 min a day (Tuesday and Thursday.)
 But on the status, minor changes all around and a good bit of the base
 program finished. The town looks like a lot of work though, but it
 will be done soon enough. I'm estimating this will be done in
-February? Depends on how much more I add. 
+February? Depends on how much more I add.
+
+# January 21st, 2016
+Well, I think this will have a "beta launch" in a few days! (if you
+want to call it that, lol) Once the town if finished the game should
+run just fine, but there is more content and polish that needs to be
+added.

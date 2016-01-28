@@ -54,34 +54,59 @@ def shop():
                         cl.Player=cl.Rogue
                         print(c.yellow+"You are now a Rogue!")
                         t.sleep(1)
-                        printc.yellow+(cl.show_player())
+                        print(c.yellow+str(cl.show_player()))
                         print()
                         input("[Press enter to continue]")
                         hub()
                     if int(cl.Player.gold) < 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
+                        hub()
                 elif buyr=="n":
-                    print(c.yellow+"Oh okay.")
+                    print(c.yellow+"Oh, okay.")
                     t.sleep(1)
                     shop()
             elif question_one=="2":
                 cl.show_cleric()
-                buyd=input(c.yellow+"Would you like to purchase the Cleric class for 100 Gold? (Y/N)"+c.reset+">>>"+c.violet).strip().lower()
+                buyd=input(c.yellow+"Would you like to purchase the Cleric class for 100 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
                 if buyd=="y":
                     if int(cl.Player.gold) >= 100:
                         cl.Player=cl.Cleric
                         print(c.yellow+"You are now a Cleric!")
                         t.sleep(1)
-                        print(c.yellow+cl.show_player())
+                        print(str(cl.show_player()))
                         print()
                         input("[Press enter to continue]")
                         hub()
+                    if int(cl.Player.gold) <= 100:
+                        print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
+                        hub()
             elif question_one=="3":
                 cl.show_sellsword()
+                buyf=input(c.yellow+"Would you like to purchase the Sellsword class for 100 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
+                if buyf=="y":
+                    if int(cl.Player.gold) >= 100:
+                        cl.Player=cl.Cleric
+                        print(c.yellow+"You are now a Sellsword!")
+                        t.sleep(1)
+                        print(cl.show_player())
+                        print()
+                        input("[Press enter to continue]")
+                    if int(cl.Player.gold) <= 100:
+                        print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
+                        hub()
+                elif buyf=="n":
+                    print(c.yellow+"Oh, okay.")
+                    t.sleep(1)
+                    shop()
+                else:
+                    print(c.yellow+"I'm not sure if I understand...")
+                    t.sleep(1.25)
+                    shop()
         elif question=="2":
             hub()
         else:
-            print(c.yellow+"I'm not sure if I understand....")
+            print(c.yellow+"I'm not sure if I understand...")
+            t.sleep(1.25)
             shop()
 if __name__=='__main__':
     hub()

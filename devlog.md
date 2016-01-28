@@ -42,3 +42,11 @@ Well, I think this will have a "beta launch" in a few days! (if you
 want to call it that, lol) Once the town if finished the game should
 run just fine, but there is more content and polish that needs to be
 added.
+
+# January 28th, 2016
+Lots of bug fixes. I love being able to play the game as a whole.
+After all this time working on it, I can finally go through it
+relatively smooth. But, the battle engine seems like it could have
+a bit more diversity... maybe having a chance the player or monster
+will miss their attack? I may work on that once a stable beta is out.
+

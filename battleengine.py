@@ -31,7 +31,7 @@ def foeheal():
     else:
         print(c.yellow+"Your foe Heals")
         t.sleep(1)
-        monster.hp+=10
+        monster.hp+=30
         monster.mp-=1
 
 def ai():
@@ -59,7 +59,7 @@ def pmove():
     elif q=="2":
         print(c.yellow+"You decide to stay back and heal.")
         t.sleep(1)
-        player.hp+=10
+        player.hp+=30
         player.mp-=1
 
 def fight():

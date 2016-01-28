@@ -24,6 +24,7 @@ logo='''
 | (_\ \ || (___) || (____/\/\____) |   | |   
 (____\/_)(_______)(_______/\_______)   )_(   
 '''
+
 def run():
     print(c.clear)
     print(c.yellow+str("Hello! And welcome to...."))
@@ -52,10 +53,15 @@ def neworload():
         qwz=input(c.yellow+"Are you sure you want to load this?"+c.reset+" (Y/N)"+c.violet).strip().lower()
         if qwz=="y":
             town.hub()
-        if qwz=="n":
+        elif qwz=="n":
+            neworload()
+        else:
+            print(c.yellow+"I don't understand... type Y for yes and N for no.")
+            t.sleep(1.5)
             neworload()
     else:
         print(c.yellow+"I don't understand... type 1 for a save file, and 2 for loading a game.")
+        t.sleep(1.5)
         neworload()
 '''
 def intro():
@@ -77,6 +83,7 @@ def intro():
     input("Looking for answers, you head to the town. [Press enter]")
     town.hub()
 '''
+
 def nameask():
     name_question=input(c.yellow+"What is your name? "+c.reset+ ">>>"+c.violet).strip().title()
     confirm=input(c.yellow+"Oh, so your name is "+c.blue+name_question+c.yellow+"?"+c.reset+"(Y/N) >>>"+c.violet).strip().lower()
@@ -90,6 +97,7 @@ def nameask():
         nameask()
     else:
         print("I don't understand... type Y for yes and N for no.")
+        t.sleep(1.5)
         nameask()
 
 if __name__=='__main__':

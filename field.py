@@ -38,7 +38,8 @@ def field():
         town.hub()
     else:
         print("I don't know what you mean....")
-
+        t.sleep(1)
+        field()
 
 if __name__=='__main__':
     cl.Player=cl.Lost

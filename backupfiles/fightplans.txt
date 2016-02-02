@@ -1,0 +1,29 @@
+so, the battle will be based in this order.
+
+1. Check to see if health is below zero.
+2. Person with the highest agility attacks first.
+3. The amount of dmg done to hp + defence.
+4. Person with the lower AGI will attack
+5. The amount of dmg done to hp + defence.
+
+example code:
+
+while True:
+  if cl.Player.hp < 1:
+    #death
+  elif cl.Foe.hp < 1:
+    #victory
+  else:
+    #battle stats on screen
+    if cl.Player.agi >= cl.Monster.agi:
+      #player attacks
+      cl.Monster.hp -= cl.Player.att
+      cl.Monster.hp += cl.Monster.deff
+      #monster attacks
+      cl.Player.hp -= cl.Monster.att
+      cl.Player.hp += cl.Player.deff
+    elif cl.Monster.agi >= cl.Monster.agi:
+      #monster attacks
+      #player attacks
+
+  

@@ -2,6 +2,7 @@ import random
 import colors as c
 import classes as cl
 import time as t
+import save
 author="jajaio"
 
 
@@ -13,23 +14,26 @@ I decided to take the old file and turn it into the battle engine for AQ.
 
 
 '''TODO
-Done! I think...
+change cl.Foe to monster
 '''
 
 def foeattack():
+    global player, monster
     print(c.yellow+"Your foe strikes you!")
     t.sleep(1)
-    cl.Player.hp -= cl.Foe.att
+    player.hp -= monster.att
+
 def foeheal():
-    if cl.Foe.mp<1:
+    global player, monster
+    if monster.mp<1:
         print(c.yellow+"Your foe tried to heal, but attacked instead!")
         t.sleep(1)
-        cl.Player.hp -= cl.Foe.att
+        player.hp -= monster.att
     else:
         print(c.yellow+"Your foe Heals")
         t.sleep(1)
-        cl.Foe.hp+=10
-        cl.Foe.mp-=1
+        monster.hp+=30
+        monster.mp-=1
 
 def ai():
 	listy=[foeheal,foeattack]
@@ -42,48 +46,60 @@ def ai():
 		input("Fatal Error")
 
 def pmove():
-    global q
+    global q, player, monster
     if q=="1":
         print(c.yellow+"You attack!")
         t.sleep(1)
-        cl.Foe.hp-=cl.Player.att
-        cl.Foe.hp+=cl.Foe.deff
-    elif q=="2" and cl.Player.mp <1:
+        monster.hp-=player.att
+        monster.hp+=monster.deff
+    elif q=="2" and player.mp <1:
         print(c.yellow+"You can not heal, so you attack instead.")
         t.sleep(1)
-        cl.Foe.hp-=cl.Player.att
-        cl.Foe.hp+=cl.Foe.deff
+        monster.hp-=player.att
+        monster.hp+=monster.deff
     elif q=="2":
         print(c.yellow+"You decide to stay back and heal.")
         t.sleep(1)
-        cl.Player.hp+=10
-        cl.Player.mp-=1
+        player.hp+=30
+        player.mp-=1
 
 def fight():
-    global q
+    global q, player, monster
+    player=cl.Player()
+    monster=cl.Foe()
     while True:
-        if cl.Player.hp < 1:
-            input("You Died!")
+        if player.hp < 1:
+            print("You Died!")
             t.sleep(1)
-            break
-        elif cl.Foe.hp < 1:
+            ter=input("Do you want to keep playing? Or quit? (1), (2)")
+            if ter=="1":
+                break
+            elif ter=="2":
+                exit()
+            else:
+                break
+        elif monster.hp < 1:
             print(c.yellow+"You won!")
             t.sleep(1)
             curr=random.randint(10,25)
             print("You got "+str(curr)+" Gold!")
-            cl.Player.gold+=curr
+            player.gold+=curr
+            save.save_game()
             t.sleep(1)
             break
         else:
             print(c.clear)
-            print(c.blue+cl.Player.name+str(" HP = ")+str(cl.Player.hp)+str(": ")+cl.Player.name+str(" MP = ")+str(cl.Player.mp))
-            print(c.red+"FOE HP = "+str(cl.Foe.hp)+str(": ")+str(" FOE MP = ")+str(cl.Foe.mp))
-            q=input(c.reset+"Attack(1) or Heal(2)? >>>").strip().lower()
-            if cl.Player.agi >= cl.Foe.agi:
+            print(c.blue+player.name+str(" HP = ")+str(player.hp)+str(": ")+player.name+str(" MP = ")+str(player.mp))
+            print(c.red+monster.mname+str(" HP = "+str(monster.hp)+str(": ")+monster.mname+str(" MP = ")+str(monster.mp)))
+            q=input(c.reset+"Attack(1) or Heal(2)? >>>"+c.violet).strip().lower()
+            if player.agi >= monster.agi:
                 pmove()
                 ai()
-            elif cl.Foe.agi > cl.Player.agi:
+            elif monster.agi > player.agi:
                 ai()
                 pmove()
+
 if __name__=='__main__':
+    cl.Player=cl.Lost
+    cl.Foe=cl.Slime
     fight()

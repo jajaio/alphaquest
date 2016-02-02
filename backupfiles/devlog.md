@@ -51,6 +51,3 @@ a bit more diversity... maybe having a chance the player or monster
 will miss their attack? I may work on that once a stable beta is out.
 
 # February 2nd, 2016
-I finally have a stable beta! Going to have some friends test it for
-me and patch up any accidental bugs. I have more I want to add to the
-full game, but it's best I walk before I run.

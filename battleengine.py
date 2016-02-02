@@ -2,6 +2,7 @@ import random
 import colors as c
 import classes as cl
 import time as t
+import save
 author="jajaio"
 
 
@@ -83,6 +84,7 @@ def fight():
             curr=random.randint(10,25)
             print("You got "+str(curr)+" Gold!")
             player.gold+=curr
+            save.save_game()
             t.sleep(1)
             break
         else:

@@ -22,6 +22,7 @@ def foeattack():
     print(c.yellow+"Your foe strikes you!")
     t.sleep(1)
     player.hp -= monster.att
+    player.hp += player.deff
 
 def foeheal():
     global player, monster
@@ -29,6 +30,7 @@ def foeheal():
         print(c.yellow+"Your foe tried to heal, but attacked instead!")
         t.sleep(1)
         player.hp -= monster.att
+        player.hp += player.deff
     else:
         print(c.yellow+"Your foe Heals")
         t.sleep(1)

@@ -47,10 +47,21 @@ added.
 Lots of bug fixes. I love being able to play the game as a whole.
 After all this time working on it, I can finally go through it
 relatively smooth. But, the battle engine seems like it could have
-a bit more diversity... maybe having a chance the player or monster
+a bit more diversity... Maybe having a chance the player or monster
 will miss their attack? I may work on that once a stable beta is out.
 
 # February 2nd, 2016
 I finally have a stable beta! Going to have some friends test it for
 me and patch up any accidental bugs. I have more I want to add to the
 full game, but it's best I walk before I run.
+
+# February 4th, 2016
+Patched gold bugs, works great now(I think.) I feel stupid for
+making these bugs in the first place, but whatever. I wonder how many
+more bugs are laying around...
+
+# February 8th, 2016
+A few more tweaks. Nitpicks for the most part, a few bug patches too.
+I think I'm gonna add a boss fight soon, since the game doesn't have
+much of a point yet. Adding Ascii battle animations to give more of
+a charm off.

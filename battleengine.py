@@ -2,7 +2,8 @@ import random
 import colors as c
 import classes as cl
 import time as t
-import save
+import anim
+
 author="jajaio"
 
 
@@ -52,6 +53,7 @@ def pmove():
     if q=="1":
         print(c.yellow+"You attack!")
         t.sleep(1)
+        anim.playeranim()
         monster.hp-=player.att
         monster.hp+=monster.deff
     elif q=="2" and player.mp <1:
@@ -85,8 +87,7 @@ def fight():
             t.sleep(1)
             curr=random.randint(10,25)
             print("You got "+str(curr)+" Gold!")
-            player.gold+=curr
-            save.save_game()
+            cl.Player.gold+=int(curr)
             t.sleep(1)
             break
         else:

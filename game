@@ -4,6 +4,7 @@ import colors as c
 import classes as cl
 import town
 import load
+import save
 
 logo='''
  _______  _        _______           _______ 
@@ -24,7 +25,7 @@ logo='''
 | (_\ \ || (___) || (____/\/\____) |   | |   
 (____\/_)(_______)(_______/\_______)   )_(   
 
-                            (BETA Ver 1.0)
+                            (BETA Ver 1.2)
 '''
 
 def run():
@@ -92,6 +93,7 @@ def nameask():
         cl.Player.name=name_question
         input(c.yellow+"Okay "+c.blue+cl.Player.name+c.yellow+", your adventure is about to start. Press enter to start!")
         cl.Player.gold+=100
+        save.save_game()
         intro()
     elif confirm=="n":
         nameask()

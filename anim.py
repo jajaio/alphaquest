@@ -4,10 +4,10 @@ import colors as c
 heroatt1='''
       |
       |
-\_0___+                                                                                                                                                                               
-  |                                                                                                                                                                                        
-  |                                                                                                                                                                                        
- / /   
+\_0___+
+  |
+  |
+ / /
 '''
 
 heroatt2='''
@@ -27,12 +27,12 @@ heromp1='''
   | |
 '''
 heromp2='''
-     <3
+   <3
 
- __ 0__
+__ 0 __
   \\|/
-    |
-   | |
+   |
+  | |
 '''
 def playerattanim():
     for count in range(2):
@@ -46,17 +46,17 @@ def playerattanim():
 def playermpanim():
     for count in range(2):
         print(c.clear)
-        print(heromp1)
+        print(c.blue+heromp1)
         t.sleep(.25)
         print(c.clear)
         print(heromp2)
         t.sleep(.25)
-
+        print(c.clear)
+        
 if __name__=='__main__':
     print("The Player attacks!")
     t.sleep(1)
     playerattanim()
-    t.sleep(1)
     print("The player heals!")
     t.sleep(1)
     playermpanim()

@@ -52,18 +52,20 @@ def pmove():
     global q, player, monster
     if q=="1":
         print(c.yellow+"You attack!")
-        t.sleep(1)
-        anim.playeranim()
+        t.sleep(1.25)
+        anim.playerattanim()
         monster.hp-=player.att
         monster.hp+=monster.deff
     elif q=="2" and player.mp <1:
         print(c.yellow+"You can not heal, so you attack instead.")
         t.sleep(1)
+        anim.playerattanim()
         monster.hp-=player.att
         monster.hp+=monster.deff
     elif q=="2":
         print(c.yellow+"You decide to stay back and heal.")
         t.sleep(1)
+        anim.playermpanim()
         player.hp+=30
         player.mp-=1
 

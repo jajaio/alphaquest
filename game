@@ -84,6 +84,7 @@ def intro():
     print("As you look in the distance, you see a small town.")
     t.sleep(2)
     input("Looking for answers, you head to the town. [Press enter]")
+    save.save_game()
     town.hub()
 
 def nameask():

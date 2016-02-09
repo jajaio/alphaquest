@@ -22,6 +22,7 @@ def foeattack():
     global player, monster
     print(c.yellow+"Your foe strikes you!")
     t.sleep(1)
+    anim.foeattanim()
     player.hp -= monster.att
     player.hp += player.deff
 
@@ -30,11 +31,13 @@ def foeheal():
     if monster.mp<1:
         print(c.yellow+"Your foe tried to heal, but attacked instead!")
         t.sleep(1)
+        anim.foeattanim()
         player.hp -= monster.att
         player.hp += player.deff
     else:
         print(c.yellow+"Your foe Heals")
         t.sleep(1)
+        anim.foempanim()
         monster.hp+=30
         monster.mp-=1
 

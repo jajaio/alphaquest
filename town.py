@@ -10,13 +10,21 @@ nothing atm
 '''
 def inn():
     print(c.clear)
-    innq=input(c.yellow+"Welcome to the inn. Would you like to rest here? Or leave? (1), (2)"+c.reset+">>>"+c.violet)
+    innq=input(c.yellow+"Welcome to the inn. Would you like to rest here? Or leave? (1), (2)"+c.reset+">>>"+c.violet).strip()
     if innq=="1":
         print(c.yellow+"You shut your eyes and rest for a bit.")
         t.sleep(.5)
         print("[Game saved!]")
         save.save_game()
-        print("You wake up feeling rested...")
+        qu=input('[Would you like to keep playing?] (Y/N)'+c.reset+' >>>'+c.violet).strip().lower()
+        if qu=='y':
+            print(c.yellow+'[Resuming game]')
+        elif qu=='n':
+            print(c.yellow+'[Exiting game...]')
+            exit()
+        else:
+            print(c.yellow+'[Resuming game]')
+        print(c.yellow+"You wake up feeling rested...")
         t.sleep(1.5)
         hub()
     elif innq=="2":

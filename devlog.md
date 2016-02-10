@@ -65,3 +65,10 @@ A few more tweaks. Nitpicks for the most part, a few bug patches too.
 I think I'm gonna add a boss fight soon, since the game doesn't have
 much of a point yet. Adding Ascii battle animations to give more of
 a charm off.
+
+# February 9th, 2016
+More ideas keep flooding my mind... I thought I was nearly done but
+I see so much more I can add to make it better. I decided to put the
+project in beta because I had just planned on just adding a boss fight, but
+after all this feedback I feel like much more needs to be added. We'll
+see the direction this goes in.

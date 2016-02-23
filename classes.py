@@ -1,9 +1,11 @@
 import colors as c
 author="jajaio"
+
 '''TODO
 Make advanced player classes
 More monsters?
 '''
+#Yeah, each class should have its own file. But this late in development, I'd rather not spend an hour tweaking all of the code.
 
 class Thing():
 	hp=None #Health
@@ -82,6 +84,15 @@ class Goblin(Foe):
     att=15
     mp=0
     deff=1
+#The dragon, AKA the final boss.
+class Dragon(Foe):
+    mname="Dragon"
+    hp=200
+    agi=0
+    att=40
+    mp=0
+    deff=0
+
 def show_cleric():
     tebt='''
     Cleric Stats:

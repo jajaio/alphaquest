@@ -3,7 +3,7 @@ import colors as c
 import classes as cl
 import time as t
 import anim
-
+import save
 author="jajaio"
 
 
@@ -94,6 +94,8 @@ def fight():
             print("You got "+str(curr)+" Gold!")
             cl.Player.gold+=int(curr)
             t.sleep(1)
+            save.save_game()
+            input('[Game Saved! Press enter to continue.]')
             break
         else:
             print(c.clear)

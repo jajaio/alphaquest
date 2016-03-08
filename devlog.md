@@ -72,3 +72,9 @@ I see so much more I can add to make it better. I decided to put the
 project in beta because I had just planned on just adding a boss fight, but
 after all this feedback I feel like much more needs to be added. We'll
 see the direction this goes in.
+
+# March 7th, 2016
+It's nearly been a month!?! I've been working on Mult(another project)
+and a paper stating my progress on the game. I plan on getting back on
+track soon though. Now I just need to sit down and figure what's next
+to do.

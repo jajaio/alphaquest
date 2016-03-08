@@ -35,6 +35,8 @@ def field():
         b.fight()
         field()
     elif f=="2":
+        print(c.yellow+"You decide to go back to the town...")
+        t.sleep(1.25)
         town.hub()
     else:
         print("I don't know what you mean....")

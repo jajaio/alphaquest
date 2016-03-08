@@ -28,7 +28,7 @@ def inn():
         t.sleep(1.5)
         hub()
     elif innq=="2":
-        print("You return to the town.")
+        print(c.yellow+"You return to the town.")
         t.sleep(1)
         hub()
     else:
@@ -74,7 +74,8 @@ def shop():
                         t.sleep(1)
                         print(str(cl.show_player()))
                         print()
-                        input("[Press enter to continue]")
+                        save.save_game()
+                        input("[Game saved! Press enter to continue]")
                         hub()
                     if int(cl.Player.gold) < 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
@@ -99,7 +100,6 @@ def shop():
                         hub()
                     elif int(cl.Player.gold) <= 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
-                        input("[Press enter to continue]")
                         hub()
                 elif buyd=="n":
                     print(c.yellow+"Oh, okay.")
@@ -116,7 +116,8 @@ def shop():
                         t.sleep(1)
                         print(cl.show_player())
                         print()
-                        input("[Press enter to continue]")
+                        save.save_game()
+                        input(" [Game saved! Press enter to continue]")
                     elif int(cl.Player.gold) <= 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
                         input("[Press enter to continue]")
@@ -130,6 +131,8 @@ def shop():
                     t.sleep(1.25)
                     shop()
         elif question=="2":
+            print(c.yellow+"You decide to go back to the town.")
+            t.sleep(1.25)
             hub()
         else:
             print(c.yellow+"I'm not sure if I understand...")

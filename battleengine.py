@@ -4,6 +4,7 @@ import classes as cl
 import time as t
 import anim
 import save
+import load
 author="jajaio"
 
 
@@ -71,9 +72,22 @@ def pmove():
         anim.playermpanim()
         player.hp+=30
         player.mp-=1
+def scanner():
+    if player.hp < 1:
+        print("You Died!")
+        t.sleep(1)
+        ter=input("Do you want to keep playing, or quit? (1), (2)")
+        if ter == '1':
+            break
+        elif ter == '2':
+            exit()
+        else:
+            break
+        #FINISH THIS
 
 def fight():
     global q, player, monster
+    load.load_game()
     player=cl.Player()
     monster=cl.Foe()
     while True:

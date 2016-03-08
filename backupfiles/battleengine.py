@@ -2,7 +2,9 @@ import random
 import colors as c
 import classes as cl
 import time as t
+import anim
 import save
+import load
 author="jajaio"
 
 
@@ -21,17 +23,22 @@ def foeattack():
     global player, monster
     print(c.yellow+"Your foe strikes you!")
     t.sleep(1)
+    anim.foeattanim()
     player.hp -= monster.att
+    player.hp += player.deff
 
 def foeheal():
     global player, monster
     if monster.mp<1:
         print(c.yellow+"Your foe tried to heal, but attacked instead!")
         t.sleep(1)
+        anim.foeattanim()
         player.hp -= monster.att
+        player.hp += player.deff
     else:
         print(c.yellow+"Your foe Heals")
         t.sleep(1)
+        anim.foempanim()
         monster.hp+=30
         monster.mp-=1
 
@@ -49,24 +56,29 @@ def pmove():
     global q, player, monster
     if q=="1":
         print(c.yellow+"You attack!")
-        t.sleep(1)
+        t.sleep(1.25)
+        anim.playerattanim()
         monster.hp-=player.att
         monster.hp+=monster.deff
     elif q=="2" and player.mp <1:
         print(c.yellow+"You can not heal, so you attack instead.")
         t.sleep(1)
+        anim.playerattanim()
         monster.hp-=player.att
         monster.hp+=monster.deff
     elif q=="2":
         print(c.yellow+"You decide to stay back and heal.")
         t.sleep(1)
+        anim.playermpanim()
         player.hp+=30
         player.mp-=1
 
 def fight():
     global q, player, monster
+    load
     player=cl.Player()
     monster=cl.Foe()
+    load.load_game()
     while True:
         if player.hp < 1:
             print("You Died!")
@@ -83,9 +95,10 @@ def fight():
             t.sleep(1)
             curr=random.randint(10,25)
             print("You got "+str(curr)+" Gold!")
-            player.gold+=curr
-            save.save_game()
+            cl.Player.gold+=int(curr)
             t.sleep(1)
+            save.save_game()
+            input('[Game Saved! Press enter to continue.]')
             break
         else:
             print(c.clear)

@@ -5,6 +5,7 @@ import classes as cl
 import town
 import load
 import save
+import os
 
 logo='''
  _______  _        _______           _______ 
@@ -25,7 +26,7 @@ logo='''
 | (_\ \ || (___) || (____/\/\____) |   | |   
 (____\/_)(_______)(_______/\_______)   )_(   
 
-                            (BETA Ver 1.2)
+                            (BETA Ver 1.3)
 '''
 
 def run():
@@ -43,7 +44,10 @@ def neworload():
     if qws=="1":
         qwa=input(c.yellow+"Are you sure? Any old save file will be deleted."+c.reset+" (Y/N) >>>"+c.violet).strip().lower()
         if qwa=="y":
+            os.system('rm player.json')
+            os.system('touch player.json')
             cl.Player=cl.Lost
+            save.save_game()
             nameask()
         elif qwa=="n":
             neworload()

@@ -5,6 +5,7 @@ import time as t
 import anim
 import save
 import load
+import field as f
 author="jajaio"
 
 
@@ -72,18 +73,28 @@ def pmove():
         anim.playermpanim()
         player.hp+=30
         player.mp-=1
+
 def scanner():
     if player.hp < 1:
         print("You Died!")
         t.sleep(1)
         ter=input("Do you want to keep playing, or quit? (1), (2)")
         if ter == '1':
-            break
+            f.field()
         elif ter == '2':
             exit()
         else:
-            break
-        #FINISH THIS
+            f.field()
+    elif monster.hp < 1:
+        print(c.yellow+"You won!")
+        t.sleep(1)
+        curr=random.randint(10,25)
+        print("You got "+str(curr)+" Gold!")
+        cl.Player.gold+=int(curr)
+        t.sleep(1)
+        save.save_game()
+        input('[Game Saved! Press enter to continue.]')
+        f.field()
 
 def fight():
     global q, player, monster
@@ -91,37 +102,38 @@ def fight():
     player=cl.Player()
     monster=cl.Foe()
     while True:
-        if player.hp < 1:
-            print("You Died!")
-            t.sleep(1)
-            ter=input("Do you want to keep playing? Or quit? (1), (2)")
-            if ter=="1":
-                break
-            elif ter=="2":
-                exit()
-            else:
-                break
-        elif monster.hp < 1:
-            print(c.yellow+"You won!")
-            t.sleep(1)
-            curr=random.randint(10,25)
-            print("You got "+str(curr)+" Gold!")
-            cl.Player.gold+=int(curr)
-            t.sleep(1)
-            save.save_game()
-            input('[Game Saved! Press enter to continue.]')
-            break
-        else:
-            print(c.clear)
-            print(c.blue+player.name+str(" HP = ")+str(player.hp)+str(": ")+player.name+str(" MP = ")+str(player.mp))
-            print(c.red+monster.mname+str(" HP = "+str(monster.hp)+str(": ")+monster.mname+str(" MP = ")+str(monster.mp)))
-            q=input(c.reset+"Attack(1) or Heal(2)? >>>"+c.violet).strip().lower()
-            if player.agi >= monster.agi:
-                pmove()
-                ai()
-            elif monster.agi > player.agi:
-                ai()
-                pmove()
+        if player.hp < 1:                                                                                                                                                                            
+            print("You Died!")                                                                                                                                                                       
+            t.sleep(1)                                                                                                                                                                               
+            ter=input("Do you want to keep playing, or quit? (1), (2)")                                                                                                                              
+            if ter == '1':                                                                                                                                                                           
+                break                                                                                                                                                                                
+            elif ter == '2':                                                                                                                                                                         
+                exit()                                                                                                                                                                               
+            else:                                                                                                                                                                                    
+                break                                                                                                                                                                                
+        elif monster.hp < 1:                                                                                                                                                                         
+            print(c.yellow+"You won!")                                                                                                                                                               
+            t.sleep(1)                                                                                                                                                                               
+            curr=random.randint(10,25)                                                                                                                                                               
+            print("You got "+str(curr)+" Gold!")                                                                                                                                                     
+            cl.Player.gold+=int(curr)                                                                                                                                                                
+            t.sleep(1)                                                                                                                                                                               
+            save.save_game()                                                                                                                                                                         
+            input('[Game Saved! Press enter to continue.]')                                                                                                                                          
+            break     
+        print(c.clear)
+        print(c.blue+player.name+str(" HP = ")+str(player.hp)+str(": ")+player.name+str(" MP = ")+str(player.mp))
+        print(c.red+monster.mname+str(" HP = "+str(monster.hp)+str(": ")+monster.mname+str(" MP = ")+str(monster.mp)))
+        q=input(c.reset+"Attack(1) or Heal(2)? >>>"+c.violet).strip().lower()
+        if player.agi >= monster.agi:
+            pmove()
+            scanner()
+            ai()
+        elif monster.agi > player.agi:
+            ai()
+            scanner()
+            pmove()
 
 if __name__=='__main__':
     cl.Player=cl.Lost

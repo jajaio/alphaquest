@@ -3,10 +3,11 @@ import save
 import time as t
 import colors as c
 import field as f
+import load
 author='jajaio'
 
 '''TODO
-nothing atm
+Change print(cl.show_player()) to just func call.
 '''
 def inn():
     print(c.clear)
@@ -14,6 +15,7 @@ def inn():
     if innq=="1":
         print(c.yellow+"You shut your eyes and rest for a bit.")
         t.sleep(.5)
+        cl.show_player()
         print("[Game saved!]")
         save.save_game()
         qu=input('[Would you like to keep playing?] (Y/N)'+c.reset+' >>>'+c.violet).strip().lower()
@@ -60,6 +62,7 @@ def hub():
 def shop():
     print(c.clear)
     while True:
+        load.load_game()
         question=input(c.yellow+"Welcome to the shop! Would you like to see our professions? Or would you like to leave? (1), (2)"+c.reset+" >>>"+c.violet).strip()
         if question=="1":
             question_one=input(c.yellow+"Okay, would you like to see the the Rogue, Cleric, or Sellsword? (1),(2),(3)"+c.reset+" >>>"+c.violet).strip()
@@ -72,7 +75,7 @@ def shop():
                         cl.Player.gold-=100
                         print(c.yellow+"You are now a Rogue!")
                         t.sleep(1)
-                        print(str(cl.show_player()))
+                        cl.show_player()
                         print()
                         save.save_game()
                         input("[Game saved! Press enter to continue]")
@@ -94,8 +97,9 @@ def shop():
                         cl.Player.gold-=100
                         print(c.yellow+"You are now a Cleric!")
                         t.sleep(1)
-                        print(str(cl.show_player()))
+                        cl.show_player()
                         print()
+                        save.save_game()
                         input("[Press enter to continue]")
                         hub()
                     elif int(cl.Player.gold) <= 100:
@@ -114,7 +118,7 @@ def shop():
                         cl.Player.gold-=100
                         print(c.yellow+"You are now a Sellsword!")
                         t.sleep(1)
-                        print(cl.show_player())
+                        cl.show_player()
                         print()
                         save.save_game()
                         input(" [Game saved! Press enter to continue]")

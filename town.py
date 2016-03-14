@@ -4,10 +4,12 @@ import time as t
 import colors as c
 import field as f
 import load
+import tower
+
 author='jajaio'
 
 '''TODO
-Change print(cl.show_player()) to just func call.
+eh
 '''
 def inn():
     print(c.clear)
@@ -41,7 +43,7 @@ def inn():
 def hub():
     print(c.clear)
     print(c.yellow+"Welcome to the Pines!")
-    hubquestion=input("Would you like to go to the field, shop, or the inn? (1), (2), (3)"+c.reset+" >>>"+c.violet)
+    hubquestion=input("Would you like to go to the field, shop, inn, or the old tower? (1), (2), (3), (4)"+c.reset+" >>>"+c.violet)
     if hubquestion=="1":
         print(c.yellow+"You decide to go to the field.")
         t.sleep(1.3)
@@ -54,6 +56,10 @@ def hub():
         print(c.yellow+"You decide to go to the inn.")
         t.sleep(1.3)
         inn()
+    elif hubquestion=="4":
+        print(c.yellow+"You take a lantern and travel to the old tower.")
+        t.sleep(1.25)
+        tower.tower()
     else:
         print("I don't understand...")
         t.sleep(1)

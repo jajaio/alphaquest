@@ -48,7 +48,7 @@ def scanner():
     if player.hp < 1:
         print("You Died!")
         t.sleep(1)
-        ter=input("Do you want to keep playing, or quit? (1), (2)")
+        ter=input(c.yellow+"Do you want to keep playing, or quit? (1), (2)"+c.reset+" >>>"+c.violet).strip()
         if ter == '1':
             tower.tower()
         elif ter == '2':

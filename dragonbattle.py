@@ -9,15 +9,13 @@ import field as f
 author="jajaio"
 
 
-'''
-This is a stripped down version of my first game I ever made called "Fight your Foe."
-It was a basic number game where you could Attack or Heal against an AI.
-I decided to take the old file and turn it into the battle engine for AQ.
+'''TODO
+setup for dragon
 '''
 
 def foeattack():
     global player, monster
-    print(c.yellow+"Your foe strikes you!")
+    print(c.yellow+"The Dragon strikes you!")
     t.sleep(1)
     anim.foeattanim()
     player.hp -= monster.att
@@ -32,7 +30,7 @@ def foeheal():
         player.hp -= monster.att
         player.hp += player.deff
     else:
-        print(c.yellow+"Your foe Heals")
+        print(c.yellow+"The Dragon Heals.")
         t.sleep(1)
         anim.foempanim()
         monster.hp+=30

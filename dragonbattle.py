@@ -3,9 +3,10 @@ import colors as c
 import classes as cl
 import time as t
 import anim
+import danim
+import tower
 import save
 import load
-import field as f
 author="jajaio"
 
 
@@ -13,38 +14,14 @@ author="jajaio"
 setup for dragon
 '''
 
-def foeattack():
+def ai():
     global player, monster
     print(c.yellow+"The Dragon strikes you!")
     t.sleep(1)
-    anim.foeattanim()
+    print(c.red)
+    danim.dragonattanim()
     player.hp -= monster.att
     player.hp += player.deff
-
-def foeheal():
-    global player, monster
-    if monster.mp<1:
-        print(c.yellow+"Your foe tried to heal, but attacked instead!")
-        t.sleep(1)
-        anim.foeattanim()
-        player.hp -= monster.att
-        player.hp += player.deff
-    else:
-        print(c.yellow+"The Dragon Heals.")
-        t.sleep(1)
-        anim.foempanim()
-        monster.hp+=30
-        monster.mp-=1
-
-def ai():
-	listy=[foeheal,foeattack]
-	move=random.choice(listy)
-	if move==foeheal:
-		foeheal()
-	elif move==foeattack:
-		foeattack()
-	else:
-		input("Fatal Error")
 
 def pmove():
     global q, player, monster
@@ -73,11 +50,11 @@ def scanner():
         t.sleep(1)
         ter=input("Do you want to keep playing, or quit? (1), (2)")
         if ter == '1':
-            f.field()
+            tower.tower()
         elif ter == '2':
             exit()
         else:
-            f.field()
+            tower.tower()
     elif monster.hp < 1:
         print(c.yellow+"You won!")
         t.sleep(1)
@@ -87,7 +64,7 @@ def scanner():
         t.sleep(1)
         save.save_game()
         input('[Game Saved! Press enter to continue.]')
-        f.field()
+        tower.tower()
 
 def fight():
     global q, player, monster
@@ -130,5 +107,5 @@ def fight():
 
 if __name__=='__main__':
     cl.Player=cl.Lost
-    cl.Foe=cl.Slime
+    cl.Foe=cl.Dragon
     fight()

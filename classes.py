@@ -16,7 +16,7 @@ class Thing():
 
 class Player(Thing):
     gold=0
-    name="Test Name"
+    name=None
 
 class Foe(Thing):
     mname="Test mob name"

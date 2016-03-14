@@ -41,6 +41,7 @@ def inn():
         inn()
 
 def hub():
+    save.save_game()
     print(c.clear)
     print(c.yellow+"Welcome to the Pines!")
     hubquestion=input("Would you like to go to the field, shop, inn, or the old tower? (1), (2), (3), (4)"+c.reset+" >>>"+c.violet)
@@ -68,7 +69,6 @@ def hub():
 def shop():
     print(c.clear)
     while True:
-        load.load_game()
         question=input(c.yellow+"Welcome to the shop! Would you like to see our professions? Or would you like to leave? (1), (2)"+c.reset+" >>>"+c.violet).strip()
         if question=="1":
             question_one=input(c.yellow+"Okay, would you like to see the the Rogue, Cleric, or Sellsword? (1),(2),(3)"+c.reset+" >>>"+c.violet).strip()
@@ -77,7 +77,11 @@ def shop():
                 buyr=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Rogue class for 100 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
                 if buyr=="y":
                     if int(cl.Player.gold) >= 100:
-                        cl.Player=cl.Rogue
+                        cl.Player.hp=cl.Rogue.hp
+                        cl.Player.att=cl.Rogue.att
+                        cl.Player.agi=cl.Rogue.agi
+                        cl.Player.deff=cl.Rogue.deff
+                        cl.Player.mp=cl.Rogue.mp
                         cl.Player.gold-=100
                         print(c.yellow+"You are now a Rogue!")
                         t.sleep(1)

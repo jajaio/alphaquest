@@ -78,3 +78,7 @@ It's nearly been a month!?! I've been working on Mult(another project)
 and a paper stating my progress on the game. I plan on getting back on
 track soon though. Now I just need to sit down and figure what's next
 to do.
+
+# March 14th, 2016
+Finally worked on the Dragon. I need to make some more classes for the
+player before they have a chance beating the Dragon. 

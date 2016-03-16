@@ -10,7 +10,7 @@ More monsters?
 class Thing():
 	hp=None #Health
 	agi=None #Agility
-	deff=None #Defence
+	deff=None #Defense
 	att=None #Attack
 	mp=None #Magic Power (Ammount of times you can heal)
 
@@ -20,7 +20,26 @@ class Player(Thing):
 
 class Foe(Thing):
     mname="Test mob name"
-#Basic Player Classes, the player will get to choose at the start of the game what class they want.
+#Advanced Classes
+class Assassin(Player):
+    hp=75
+    agi=70
+    deff=7
+    att=35
+    mp=2
+class Paladin(Player):
+    hp=100
+    agi=55
+    deff=10
+    att=45
+    mp=1
+class Wizard(Player):
+    hp=50
+    agi=70
+    deff=5
+    att=30
+    mp=8
+#Basic Classes
 class Rogue(Player):
     hp=50
     agi=70
@@ -89,7 +108,7 @@ class Dragon(Foe):
     mname="Dragon"
     hp=200
     agi=0
-    att=40
+    att=25
     mp=0
     deff=0
 
@@ -99,7 +118,7 @@ def show_cleric():
     Health: {c.hp}
     Agility: {c.agi}
     Attack: {c.att}
-    Defence: {c.deff}	
+    Defense: {c.deff}	
     Magic: {c.mp}
     '''
     print(tebt.format(c=Cleric()))
@@ -109,7 +128,7 @@ def show_rogue():
     Health: {r.hp}
     Agility: {r.agi}
     Attack: {r.att}
-    Defence: {r.deff}
+    Defense: {r.deff}
     Magic: {r.mp}
 	'''
     print(text.format(r=Rogue()))
@@ -120,10 +139,43 @@ def show_sellsword():
     Health: {s.hp}
     Agility: {s.agi}
     Attack: {s.att}
-    Defence: {s.deff}
+    Defense: {s.deff}
     Magic: {s.mp}
     '''
     print(tezt.format(s=Sellsword()))
+
+def show_assassin():
+    assassintext='''
+    Assassin Stats:
+    Health: {a.hp}
+    Agility: {a.agi}
+    Attack: {a.att}
+    Defense: {a.deff}
+    Magic: {a.mp}
+    '''
+    print(assassintext.format(a=Assassin()))
+
+def show_wizard():
+    wizardtext='''
+    Wizard Stats:
+    Health: {w.hp}
+    Agility: {w.agi}
+    Attack: {w.att}
+    Defense: {w.deff}
+    Magic: {w.mp}
+    '''
+    print(wizardtext.format(w=Wizard()))
+
+def show_paladin():
+    paladintext='''
+    Paladin Stats:
+    Health: {v.hp}
+    Agility: {v.agi}
+    Attack: {v.att}
+    Defense: {v.deff}
+    Magic: {v.mp}
+    '''
+    print(paladintext.format(v=Paladin()))
 
 def show_player():
     yext='''
@@ -131,7 +183,7 @@ def show_player():
     Health: {p.hp}
     Agility: {p.agi}
     Attack: {p.agi}
-    Defence: {p.deff}
+    Defense: {p.deff}
     Magic: {p.mp}
     Gold: {p.gold}
     '''
@@ -141,4 +193,7 @@ if __name__=='__main__':
     show_rogue()
     show_sellsword()
     show_cleric()
+    show_assassin()
+    show_wizard()
+    show_paladin()
     show_player()

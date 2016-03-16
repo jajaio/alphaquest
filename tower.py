@@ -22,6 +22,7 @@ def tower():
         elif q == "2":
             print(c.yellow+"You return to the town.")
             t.sleep(1)
+            town.hub()
         else:
             print("I don't know what that means...")
             t.sleep(1)

@@ -8,9 +8,6 @@ import tower
 
 author='jajaio'
 
-'''TODO
-eh
-'''
 def inn():
     print(c.clear)
     innq=input(c.yellow+"Welcome to the inn. Would you like to rest here? Or leave? (1), (2)"+c.reset+">>>"+c.violet).strip()
@@ -69,7 +66,7 @@ def hub():
 def shop():
     print(c.clear)
     while True:
-        question=input(c.yellow+"Welcome to the shop! Would you like to see our professions? Or would you like to leave? (1), (2)"+c.reset+" >>>"+c.violet).strip()
+        question=input(c.yellow+"Welcome to the shop! Would you like to see our professions, masteries, or would you like to leave? (1), (2), (3)"+c.reset+" >>>"+c.violet).strip()
         if question=="1":
             question_one=input(c.yellow+"Okay, would you like to see the the Rogue, Cleric, or Sellsword? (1),(2),(3)"+c.reset+" >>>"+c.violet).strip()
             if question_one=="1":
@@ -88,11 +85,11 @@ def shop():
                         cl.show_player()
                         print()
                         save.save_game()
-                        input("[Game saved! Press enter to continue]")
+                        input("[Game saved! Press enter to continue.]")
                         hub()
                     if int(cl.Player.gold) < 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
-                        input("[Press enter to continue]")
+                        input("[Press enter to continue.]")
                         hub()
                 elif buyr=="n":
                     print(c.yellow+"Oh, okay.")
@@ -103,14 +100,18 @@ def shop():
                 buyd=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Cleric class for 100 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
                 if buyd=="y":
                     if int(cl.Player.gold) >= 100:
-                        cl.Player=cl.Cleric
+                        cl.Player.hp=cl.Cleric.hp
+                        cl.Player.att=cl.Cleric.att
+                        cl.Player.agi=cl.Cleric.agi
+                        cl.Player.deff=cl.Cleric.deff
+                        cl.Player.mp=cl.Cleric.mp
                         cl.Player.gold-=100
                         print(c.yellow+"You are now a Cleric!")
                         t.sleep(1)
                         cl.show_player()
                         print()
                         save.save_game()
-                        input("[Press enter to continue]")
+                        input("[Press enter to continue.]")
                         hub()
                     elif int(cl.Player.gold) <= 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
@@ -124,14 +125,19 @@ def shop():
                 buyf=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Sellsword class for 100 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
                 if buyf=="y":
                     if int(cl.Player.gold) >= 100:
-                        cl.Player=cl.Sellsword
+                        cl.Player.hp=cl.Sellsword.hp
+                        cl.Player.att=cl.Sellsword.att
+                        cl.Player.agi=cl.Sellsword.agi
+                        cl.Player.deff=cl.Sellsword.deff
+                        cl.Player.mp=cl.Sellsword.mp
                         cl.Player.gold-=100
                         print(c.yellow+"You are now a Sellsword!")
                         t.sleep(1)
                         cl.show_player()
                         print()
                         save.save_game()
-                        input(" [Game saved! Press enter to continue]")
+                        input("[Game saved! Press enter to continue.]")
+                        hub()
                     elif int(cl.Player.gold) <= 100:
                         print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 100!")
                         input("[Press enter to continue]")
@@ -145,6 +151,95 @@ def shop():
                     t.sleep(1.25)
                     shop()
         elif question=="2":
+            question_q=input(c.yellow+"Our masteries are the Assassin, Wizard, Paladin. What would you like to see? (1), (2), (3)"+c.reset+" >>>"+c.violet).strip()
+            if question_q=="1":
+                cl.show_assassin()
+                buyg=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Assassin class for 200 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
+                if buyg=='y':
+                    if int(cl.Player.gold) >= 200:
+                        cl.Player.hp=cl.Assassin.hp
+                        cl.Player.att=cl.Assassin.att
+                        cl.Player.agi=cl.Assassin.agi
+                        cl.Player.deff=cl.Assassin.deff
+                        cl.Player.mp=cl.Assassin.mp
+                        cl.Player.gold-=200
+                        print(c.yellow+"You are now an Assassin!")
+                        t.sleep(1)
+                        cl.show_player()
+                        print()
+                        save.save_game()
+                        input("[Game saved! Press enter to continue.]")
+                        hub()
+                    elif int(cl.Player.gold) <= 200:
+                        print(c.yellow+"You need more money! You currently have"+str(cl.Player.gold)+" and you need 200!")
+                        input("[Press enter to continue.]")
+                        hub()
+                elif buyg=='n':
+                    print(c.yellow+"Oh, okay.")
+                    t.sleep(1)
+                    shop()
+                else:
+                    print("I'm not sure if I understand...")
+                    t.sleep(1.25)
+                    shop()
+            elif question_q=="2":
+                buyh=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Wizard class for 200 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
+                if buyh=="y":
+                    if int(cl.Player.gold) >= 200:
+                        cl.Player.hp=cl.Wizard.hp
+                        cl.Player.att=cl.Wizard.att
+                        cl.Player.agi=cl.Wizard.agi
+                        cl.Player.deff=cl.Wizard.deff
+                        cl.Player.mp=cl.Wizard.mp
+                        cl.Player.gold-=200
+                        print(c.yellow+"You are now a Wizard!")
+                        t.sleep(1)
+                        cl.show_player()
+                        print()
+                        save.save_game()
+                        input("[Game saved! Press enter to continue.]")
+                        hub()
+                    elif int(cl.Player.gold) <= 200:
+                        print(c.yellow+"You need more money! You currently have"+str(cl.Player.gold)+" and you need 200!")
+                        input("[Press enter to continue.]")
+                        hub()
+                elif buyh=="n":
+                    print("Oh, Okay.")
+                    t.sleep(1)
+                    shop()
+                else:
+                    print("I'm not sure if I understand...")
+                    t.sleep(1.25)
+            elif question_q=="3":
+                buyj=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Paladin class for 200 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
+                if buyj=="y":
+                    if int(cl.Player.gold) >= 200:
+                        cl.Player.hphp=cl.Paladin.hp
+                        cl.Player.att=cl.Paladin.att
+                        cl.Player.agi=cl.Paladin.agi
+                        cl.Player.deff=cl.Paladin.deff
+                        cl.Player.mp=cl.Paladin.mp
+                        cl.Player.gold -= 200
+                        print("You are now a Paladin!")
+                        t.sleep(1)
+                        cl.show_player()
+                        print()
+                        save.save_game()
+                        input('[Game saved! Press enter to continue.]')
+                        hub()
+                    elif int(cl.Player.gold) <= 200:
+                        print(c.yellow+"You need more money! You currently have"+str(cl.Player.gold)+" and you need 200!")
+                        input('[Press enter to continue.]')
+                        hub()
+                elif buyj=="n":
+                    print("Oh, Okay.")
+                    t.sleep(1)
+                    shop()
+            else:
+                print(c.yellow+"I'm not sure if I understand...")
+                t.sleep(1.25)
+                shop()
+        elif question=="3":
             print(c.yellow+"You decide to go back to the town.")
             t.sleep(1.25)
             hub()

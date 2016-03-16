@@ -7,6 +7,7 @@ import danim
 import tower
 import save
 import load
+import credits
 author="jajaio"
 
 
@@ -56,16 +57,27 @@ def scanner():
         else:
             tower.tower()
     elif monster.hp < 1:
-        print(c.yellow+"You won!")
-        t.sleep(1)
-        curr=random.randint(10,25)
-        print("You got "+str(curr)+" Gold!")
-        cl.Player.gold+=int(curr)
-        t.sleep(1)
-        save.save_game()
-        input('[Game Saved! Press enter to continue.]')
-        tower.tower()
-
+        print(c.yellow+"You won!")                                                                                                                                  
+        cl.Player.gold+=100000                                                                                                                                      
+        save.save_game()                                                                                                                                            
+        t.sleep(1)                                                                                                                                                  
+        print("Blinding light begins too engulf you.")                                                                                                              
+        t.sleep(1.25)                                                                                                                                               
+        print(c.clear)                                                                                                                                              
+        print(c.reset+".")                                                                                                                                                  
+        t.sleep(1)                                                                                                                                                  
+        print(c.clear)                                                                                                                                              
+        print("..")                                                                                                                                                 
+        t.sleep(1)                                                                                                                                                  
+        print(c.clear)                                                                                                                                              
+        print("...")                                                                                                                                                
+        t.sleep(1)                                                                                                                                                  
+        print(c.clear)                                                                                                                                              
+        print("You awake.")                                                                                                                                         
+        t.sleep(1.5)                                                                                                                                                
+        print(c.clear)                                                                                                                                              
+        credits.roll()                                                                                                                                              
+        exit()     
 def fight():
     global q, player, monster
     load.load_game()
@@ -84,14 +96,26 @@ def fight():
                 break                                                                                                                                                                                
         elif monster.hp < 1:                                                                                                                                                                         
             print(c.yellow+"You won!")                                                                                                                                                               
+            cl.Player.gold+=100000
+            save.save_game()
             t.sleep(1)                                                                                                                                                                               
-            curr=random.randint(10,25)                                                                                                                                                               
-            print("You got "+str(curr)+" Gold!")                                                                                                                                                     
-            cl.Player.gold+=int(curr)                                                                                                                                                                
-            t.sleep(1)                                                                                                                                                                               
-            save.save_game()                                                                                                                                                                         
-            input('[Game Saved! Press enter to continue.]')                                                                                                                                          
-            break     
+            print("Blinding light begins too engulf you.")
+            t.sleep(1.25)
+            print(c.clear)
+            print(".")
+            t.sleep(1)
+            print(c.clear)
+            print("..")
+            t.sleep(1)
+            print(c.clear)
+            print("...")
+            t.sleep(1)
+            print(c.clear)
+            print("You awake.")
+            t.sleep(1.5)
+            print(c.clear)
+            credits.roll()
+            exit()
         print(c.clear)
         print(c.blue+player.name+str(" HP = ")+str(player.hp)+str(": ")+player.name+str(" MP = ")+str(player.mp))
         print(c.red+monster.mname+str(" HP = "+str(monster.hp)+str(": ")+monster.mname+str(" MP = ")+str(monster.mp)))

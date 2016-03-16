@@ -200,7 +200,7 @@ def shop():
                         input("[Game saved! Press enter to continue.]")
                         hub()
                     elif int(cl.Player.gold) <= 200:
-                        print(c.yellow+"You need more money! You currently have"+str(cl.Player.gold)+" and you need 200!")
+                        print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 200!")
                         input("[Press enter to continue.]")
                         hub()
                 elif buyh=="n":
@@ -228,7 +228,7 @@ def shop():
                         input('[Game saved! Press enter to continue.]')
                         hub()
                     elif int(cl.Player.gold) <= 200:
-                        print(c.yellow+"You need more money! You currently have"+str(cl.Player.gold)+" and you need 200!")
+                        print(c.yellow+"You need more money! You currently have "+str(cl.Player.gold)+" and you need 200!")
                         input('[Press enter to continue.]')
                         hub()
                 elif buyj=="n":

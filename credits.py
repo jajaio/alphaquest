@@ -1,5 +1,4 @@
 import time as t
-
 author='jajaio'
 
 def roll():
@@ -11,6 +10,6 @@ def roll():
     t.sleep(2)
     print("Special thanks to: Rob Muhlestein")
     t.sleep(2)
-
+    input('[Game Saved! Press enter to continue]')
 if __name__ == '__main__':
     roll()

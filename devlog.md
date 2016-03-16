@@ -82,3 +82,9 @@ to do.
 # March 14th, 2016
 Finally worked on the Dragon. I need to make some more classes for the
 player before they have a chance beating the Dragon. 
+
+# March 16th, 2016
+It's done. The release is out, and stable. AlphaQuest is out of beta
+and into it's final release. I plan on updating the game with some
+more to do over time, but this is the end for now. It's kinda bitter
+sweet to be honest.

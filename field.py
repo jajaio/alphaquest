@@ -44,5 +44,4 @@ def field():
         field()
 
 if __name__=='__main__':
-    cl.Player=cl.Lost
     field()

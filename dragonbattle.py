@@ -87,7 +87,7 @@ def fight():
     monster=cl.Dragon()
     while True:
         if player.hp < 1: 
-            print("You Died!")                                                                                                                                                                       
+            print(c.yellow+"You Died!")                                                                                                                                                                       
             t.sleep(1)                                                                                                                                                                               
             ter=input("Do you want to keep playing, or quit? (1), (2)")                                                                                                                              
             if ter == '1':                                                                                                                                                                           

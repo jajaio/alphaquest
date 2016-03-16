@@ -117,18 +117,19 @@ def fight():
             save.save_game()                                                                                                                                                                         
             input('[Game Saved! Press enter to continue.]')                                                                                                                                          
             break     
-        print(c.clear)
-        print(c.blue+player.name+str(" HP = ")+str(player.hp)+str(": ")+player.name+str(" MP = ")+str(player.mp))
-        print(c.red+monster.mname+str(" HP = "+str(monster.hp)+str(": ")+monster.mname+str(" MP = ")+str(monster.mp)))
-        q=input(c.reset+"Attack(1) or Heal(2)? >>>"+c.violet).strip().lower()
-        if player.agi >= monster.agi:
-            pmove()
-            scanner()
-            ai()
-        elif monster.agi > player.agi:
-            ai()
-            scanner()
-            pmove()
+        else:
+            print(c.clear)
+            print(c.blue+player.name+str(" HP = ")+str(player.hp)+str(": ")+player.name+str(" MP = ")+str(player.mp))
+            print(c.red+monster.mname+str(" HP = "+str(monster.hp)+str(": ")+monster.mname+str(" MP = ")+str(monster.mp)))
+            q=input(c.reset+"Attack(1) or Heal(2)? >>>"+c.violet).strip().lower()
+            if player.agi >= monster.agi:
+                pmove()
+                scanner()
+                ai()
+            elif monster.agi > player.agi:
+                ai()
+                scanner()
+                pmove()
 
 if __name__=='__main__':
     cl.Player=cl.Lost

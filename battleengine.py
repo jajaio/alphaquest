@@ -32,7 +32,7 @@ def foeheal():
         player.hp -= monster.att
         player.hp += player.deff
     else:
-        print(c.yellow+"Your foe Heals")
+        print(c.yellow+"Your foe heals.")
         t.sleep(1)
         anim.foempanim()
         monster.hp+=30

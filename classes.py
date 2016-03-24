@@ -34,7 +34,7 @@ class Paladin(Player):
     att=45
     mp=1
 class Wizard(Player):
-    hp=50
+    hp=75
     agi=70
     deff=5
     att=30

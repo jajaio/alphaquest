@@ -26,7 +26,7 @@ logo='''
 | (_\ \ || (___) || (____/\/\____) |   | |   
 (____\/_)(_______)(_______/\_______)   )_(   
 
-                            (Ver. 1.0)
+                            (Ver. 1.0.1)
 '''
 
 def run():
@@ -73,7 +73,7 @@ def neworload():
 
 def intro():
     print(c.clear)
-    print("You awake.")
+    print("You awaken.")
     t.sleep(1)
     print("You look around.")
     t.sleep(1)
@@ -98,6 +98,7 @@ def nameask():
     if confirm=="y":
         cl.Player.name=name_question
         input(c.yellow+"Okay "+c.blue+cl.Player.name+c.yellow+", your adventure is about to start. Press enter to start!")
+        cl.Player.gold=0
         cl.Player.gold+=100
         save.save_game()
         intro()

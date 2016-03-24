@@ -113,7 +113,7 @@ def fight():
             print("...")
             t.sleep(1)
             print(c.clear)
-            print("You awake.")
+            print("You awaken.")
             t.sleep(1.5)
             print(c.clear)
             credits.roll()

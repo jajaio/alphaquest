@@ -183,6 +183,7 @@ def shop():
                     t.sleep(1.25)
                     shop()
             elif question_q=="2":
+                cl.show_wizard()
                 buyh=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Wizard class for 200 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
                 if buyh=="y":
                     if int(cl.Player.gold) >= 200:
@@ -211,6 +212,7 @@ def shop():
                     print("I'm not sure if I understand...")
                     t.sleep(1.25)
             elif question_q=="3":
+                cl.show_paladin()
                 buyj=input(c.yellow+"You currently have "+str(cl.Player.gold)+" gold. Would you like to purchase the Paladin class for 200 gold? (Y/N)"+c.reset+" >>>"+c.violet).strip().lower()
                 if buyj=="y":
                     if int(cl.Player.gold) >= 200:

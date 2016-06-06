@@ -1,3 +1,15 @@
+# Status
+AlphaQuest is finished. (Woohoo!)
+
+I've been working on another RPG called King's Army. A game
+I designed back from early childhood, and decided to make it for my
+friend's birthday. I prefer King's army because there's more to do, and
+a level up system. I think that If I were to make an AlphaQuest 2,
+I would add the level up system and advance the class system. Or maybe
+I should just stop doing these text-based RPGs.
+
+-June 6th, 2016
+
 # Independent Study
 I'm taking a independent study course this year for programming and
 Linux. I thought it would be a good idea to get extra time to practice
